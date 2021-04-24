@@ -3,6 +3,7 @@ import { useState } from "react";
 import CheckboxFilter from "../components/RandomUsers/CheckboxFilter";
 import DataTable from "../components/RandomUsers/DataTable";
 import GenerateListButton from "../components/RandomUsers/GenerateListButton";
+import JsonViewer from "../components/RandomUsers/JsonViewer";
 
 import getRandomUsers from "../utils/fakeGenerator";
 
@@ -80,6 +81,8 @@ export default function Home() {
         {randomList.length > 0 && (
           <DataTable data={randomList} filter={checkboxList} />
         )}
+
+        <JsonViewer data={randomList} filter={checkboxList}/>
 
       </main>
 
