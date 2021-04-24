@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CheckboxFilter from "../components/RandomUsers/CheckboxFilter";
 import DataTable from "../components/RandomUsers/DataTable";
 import GenerateListButton from "../components/RandomUsers/GenerateListButton";
