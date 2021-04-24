@@ -7,7 +7,7 @@ export default function fakeGenerator(amount) {
     list.push({
       name: faker.name.findName(),
       email: faker.internet.email(),
-      addres: faker.address.streetAddress(),
+      address: faker.address.streetAddress(),
       username: faker.internet.userName(),
       password: faker.internet.password(),
       age: faker.datatype.number({

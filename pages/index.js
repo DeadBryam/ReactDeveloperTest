@@ -1,5 +1,8 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import DataTable from "../components/RandomUsers/DataTable";
+import GenerateListButton from "../components/RandomUsers/GenerateListButton";
+
 import getRandomUsers from "../utils/fakeGenerator";
 
 export default function Home() {
@@ -10,7 +13,6 @@ export default function Home() {
     amount > 0
       ? setRandomList(getRandomUsers(amount))
       : alert("INSERT ANY AMOUNT");
-
   };
 
   const onInputHandler = (evt) => {
@@ -28,10 +30,13 @@ export default function Home() {
         <p className="font-sans text-7xl font-bold text-white top-0 black-light">
           RANDOM FAKE USERS GENERATOR
         </p>
-        <div className="h-40 w-full bg-gray-800">
-          <input type="number" onChange={onInputHandler} />
-          <button onClick={onClickHandler}>BUSCAR</button>
+        <div className="h-40 w-full bg-gray-800 flex">
+          <GenerateListButton onClickHandler={onClickHandler} onInputHandler={onInputHandler}/>
+          
         </div>
+
+        
+        {randomList.length > 0 && <DataTable data={randomList}/>}
 
       </main>
 
