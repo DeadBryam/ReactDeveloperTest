@@ -82,7 +82,9 @@ export default function Home() {
           <DataTable data={randomList} filter={checkboxList} />
         )}
 
-        <JsonViewer data={randomList} filter={checkboxList}/>
+        {randomList.length > 0 && (
+          <JsonViewer data={randomList} filter={checkboxList}/>
+        )}
 
       </main>
 
